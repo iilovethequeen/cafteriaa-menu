@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Enues</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #135828;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #444;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .qr {
+      margin-top: 30px;
+    }
+    canvas {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <p></p>
+
+  <!-- صورة المنيو الأولى -->
+  <img src="menu1.jpg.jpg" alt=" El menu1">
+
+  <!-- صورة المنيو الثانية -->
+  <img src="menu2.jpg.jpg" alt="El menu2">
+
+  <!-- كود QR يولد تلقائياً -->
+  <div class="qr">
+    
+    <div id="qrcode"></div>
+  </div>
+
+  <!-- مكتبة توليد QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // الرابط الحالي للصفحة
+    var pageUrl = window.location.href;
+
+    // توليد الكود
+    new QRCode(document.getElementById("qrcode"), {
+      text: pageUrl,
+      width: 200,
+      height: 200
+    });
+  </script>
+</body>
+</html>
